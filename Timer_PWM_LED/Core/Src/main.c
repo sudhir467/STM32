@@ -1,5 +1,5 @@
 /*
- * This application is to produce PWM signal of various with 25,45,75,95 percent duty cycle on 4 channels of Timer 2
+ * This application is to produce PWM signal to increase and decrease brightness of LED using  Timer 2
  *
  * Author:Sudhir Borra.
  * */
