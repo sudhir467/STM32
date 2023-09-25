@@ -8,15 +8,15 @@
 #include "I2C.h"
 
 
-#define MPU6050_ADDR      0xD0
-#define SMPLRT_DIV_REG    0x19
-#define GYRO_CONFIG_REG		0x1B
-#define ACCEL_CONFIG_REG 	0x1C
-#define ACCEL_XOUT_H_REG  0x3B
-#define TEMP_OUT_H_REG 		0x41
-#define GYRO_XOUT_H_REG		0x43
-#define PWR_MGMT_1_REG		0x6B
-#define WHO_AM_I_REG 			0x75
+#define MPU6050_ADDR     	 0xD0
+#define SMPLRT_DIV_REG   	 0x19
+#define GYRO_CONFIG_REG		 0x1B
+#define ACCEL_CONFIG_REG 	 0x1C
+#define ACCEL_XOUT_H_REG     0x3B
+#define TEMP_OUT_H_REG 		 0x41
+#define GYRO_XOUT_H_REG		 0x43
+#define PWR_MGMT_1_REG		 0x6B
+#define WHO_AM_I_REG 		 0x75
 
 int16_t Accel_X_RAW=0;
 int16_t Accel_Y_RAW=0;
@@ -97,10 +97,9 @@ void MPU6050_Read_Accel (void)
 	Accel_Y_RAW = (int16_t)(Rx_data[2] << 8 | Rx_data [3]);
 	Accel_Z_RAW = (int16_t)(Rx_data[4] << 8 | Rx_data [5]);
 
-	/*** convert the RAW values into acceleration in 'g'
-	     we have to divide according to the Full scale value set in FS_SEL
-	     I have configured FS_SEL = 0. So I am dividing by 16384.0
-	     for more details check ACCEL_CONFIG Register              ****/
+	/*** convert the RAW values into acceleration in 'g' we have to divide according to the Full scale value set in FS_SEL
+	     I have configured FS_SEL = 0. So I am dividing by 16384.0 for more details check ACCEL_CONFIG Register    
+	****/
 
 	Ax = Accel_X_RAW/16384.0;
 	Ay = Accel_Y_RAW/16384.0;
