@@ -1,0 +1,279 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.38.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: sudhir borra, Borri Spa, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.38.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.19
+Assembler:       Armasm.exe V6.19
+Linker/Locator:  ArmLink.exe V6.19
+Library Manager: ArmAr.exe V6.19
+Hex Converter:   FromElf.exe V6.19
+CPU DLL:         SARMCM3.DLL V5.38.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      UL2CM3.DLL V1.164.8.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+C:\Users\sudhi\Documents\STM32_Register\I2C_MPU\I2CTx_Rx.uvprojx
+Project File Date:  09/25/2023
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.19', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'Target 1'
+compiling system_stm32f4xx.c...
+assembling startup_stm32f446xx.s...
+Delay.c(5): warning: In file included from...
+./RccConfig.h(2): warning: // comments are not allowed in this language [-Wcomment]
+#include "stm32f4xx.h"                  // Device header
+                                        ^
+Delay.c(15): warning: // comments are not allowed in this language [-Wcomment]
+// 1. Enable Timer clock
+^
+Delay.c(40): warning: variable declaration in for loop is a C99-specific feature [-Wc99-extensions]
+        for (uint16_t i=0; i<ms; i++)
+             ^
+Delay.c(40): warning: GCC does not allow variable declarations in for loop initializers before C99 [-Wgcc-compat]
+4 warnings generated.
+compiling Delay.c...
+RccConfig.c(22): warning: In file included from...
+./RccConfig.h(2): warning: // comments are not allowed in this language [-Wcomment]
+#include "stm32f4xx.h"                  // Device header
+                                        ^
+RccConfig.c(41): warning: // comments are not allowed in this language [-Wcomment]
+        #define PLL_P   0          // PLLP = 2
+                                   ^
+2 warnings generated.
+compiling RccConfig.c...
+I2C.c(5): warning: In file included from...
+./RccConfig.h(2): warning: // comments are not allowed in this language [-Wcomment]
+#include "stm32f4xx.h"                  // Device header
+                                        ^
+I2C.c(7): warning: In file included from...
+./I2C.h(17): warning: no newline at end of file [-Wnewline-eof]
+void I2C_Read (uint8_t Address, uint8_t *buffer, uint8_t size);
+                                                               ^
+I2C.c(27): warning: // comments are not allowed in this language [-Wcomment]
+        RCC->APB1ENR |=(1<<21); //Enable I2C clock
+                                ^
+I2C.c(39): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        I2C1->CR1 &= ~(1<<15);
+                  ~~ ^~~~~~~~
+I2C.c(91): warning: implicit conversion loses integer precision: 'unsigned int' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+        uint8_t temp = I2C1->SR1 | I2C1->SR2; // read SR1 and SR2 to clear the ADDR bit
+                ~~~~   ~~~~~~~~~~^~~~~~~~~~~
+I2C.c(91): warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
+        uint8_t temp = I2C1->SR1 | I2C1->SR2; // read SR1 and SR2 to clear the ADDR bit
+                ^
+I2C.c(91): warning: unused variable 'temp' [-Wunused-variable]
+I2C.c(144): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                I2C1->CR1 &=~(1<<10); //clear the ACK bit
+                          ~~^~~~~~~~
+I2C.c(145): warning: implicit conversion loses integer precision: 'unsigned int' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+                uint8_t temp =I2C1->SR1 | I2C1->SR2; //read the SR1 and SR2 to clear ADDR bit
+                        ~~~~  ~~~~~~~~~~^~~~~~~~~~~
+I2C.c(150): warning: implicit conversion loses integer precision: 'volatile uint32_t' (aka 'volatile unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+                buffer[size-remaining]=I2C1->DR; // Read the data from the DATA register
+                                      ~~~~~~~^~
+I2C.c(145): warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
+                uint8_t temp =I2C1->SR1 | I2C1->SR2; //read the SR1 and SR2 to clear ADDR bit
+                        ^
+I2C.c(145): warning: unused variable 'temp' [-Wunused-variable]
+I2C.c(159): warning: implicit conversion loses integer precision: 'unsigned int' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+                uint8_t temp=I2C1->SR1 |I2C1->SR2; //read SR1 and Sr2 to clear the ADDR bit
+                        ~~~~ ~~~~~~~~~~^~~~~~~~~~
+I2C.c(165): warning: implicit conversion loses integer precision: 'volatile uint32_t' (aka 'volatile unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+                        buffer[size-remaining]= I2C1->DR; //COpy the data into the buffer
+                                              ~ ~~~~~~^~
+I2C.c(174): warning: implicit conversion loses integer precision: 'volatile uint32_t' (aka 'volatile unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+                buffer[size-remaining]= I2C1->DR;
+                                      ~ ~~~~~~^~
+I2C.c(176): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                I2C1->CR1 &=~(1<<10); //clear the ACK bit
+                          ~~^~~~~~~~
+I2C.c(185): warning: implicit conversion loses integer precision: 'volatile uint32_t' (aka 'volatile unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+                buffer[size-remaining]= I2C1->DR; // COpy the data into buffer
+                                      ~ ~~~~~~^~
+I2C.c(159): warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
+                uint8_t temp=I2C1->SR1 |I2C1->SR2; //read SR1 and Sr2 to clear the ADDR bit
+                        ^
+I2C.c(159): warning: unused variable 'temp' [-Wunused-variable]
+19 warnings generated.
+compiling I2C.c...
+main.c(7): warning: In file included from...
+./RccConfig.h(2): warning: // comments are not allowed in this language [-Wcomment]
+#include "stm32f4xx.h"                  // Device header
+                                        ^
+main.c(8): warning: In file included from...
+./I2C.h(17): warning: no newline at end of file [-Wnewline-eof]
+void I2C_Read (uint8_t Address, uint8_t *buffer, uint8_t size);
+                                                               ^
+main.c(21): warning: no previous extern declaration for non-static variable 'Accel_X_RAW' [-Wmissing-variable-declarations]
+int16_t Accel_X_RAW=0;
+        ^
+main.c(21): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int16_t Accel_X_RAW=0;
+^
+main.c(22): warning: no previous extern declaration for non-static variable 'Accel_Y_RAW' [-Wmissing-variable-declarations]
+int16_t Accel_Y_RAW=0;
+        ^
+main.c(22): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int16_t Accel_Y_RAW=0;
+^
+main.c(23): warning: no previous extern declaration for non-static variable 'Accel_Z_RAW' [-Wmissing-variable-declarations]
+int16_t Accel_Z_RAW=0;
+        ^
+main.c(23): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int16_t Accel_Z_RAW=0;
+^
+main.c(25): warning: no previous extern declaration for non-static variable 'Gyro_X_RAW' [-Wmissing-variable-declarations]
+int16_t Gyro_X_RAW=0;
+        ^
+main.c(25): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int16_t Gyro_X_RAW=0;
+^
+main.c(26): warning: no previous extern declaration for non-static variable 'Gyro_Y_RAW' [-Wmissing-variable-declarations]
+int16_t Gyro_Y_RAW=0;
+        ^
+main.c(26): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int16_t Gyro_Y_RAW=0;
+^
+main.c(27): warning: no previous extern declaration for non-static variable 'Gyro_Z_RAW' [-Wmissing-variable-declarations]
+int16_t Gyro_Z_RAW=0;
+        ^
+main.c(27): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int16_t Gyro_Z_RAW=0;
+^
+main.c(34): warning: no previous prototype for function 'MPU_Write' [-Wmissing-prototypes]
+void MPU_Write(uint8_t Address, uint8_t Reg, uint8_t Data)
+     ^
+main.c(34): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void MPU_Write(uint8_t Address, uint8_t Reg, uint8_t Data)
+^
+static 
+main.c(49): warning: // comments are not allowed in this language [-Wcomment]
+        I2C_Start();                    // repeated start
+                                        ^
+main.c(44): warning: no previous prototype for function 'MPU_Read' [-Wmissing-prototypes]
+void MPU_Read(uint8_t  Address, uint8_t Reg, uint8_t *buffer, uint8_t size)
+     ^
+main.c(44): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void MPU_Read(uint8_t  Address, uint8_t Reg, uint8_t *buffer, uint8_t size)
+^
+static 
+main.c(57): warning: declaration shadows a variable in the global scope [-Wshadow]
+        uint8_t check;
+                ^
+main.c(31): note: previous declaration is here
+uint8_t check;
+        ^
+main.c(55): warning: no previous prototype for function 'MPU6050_Init' [-Wmissing-prototypes]
+void MPU6050_Init (void)
+     ^
+main.c(55): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void MPU6050_Init (void)
+^
+static 
+main.c(105): warning: implicit conversion loses floating-point precision: 'double' to 'float' [-Wimplicit-float-conversion]
+        Ax = Accel_X_RAW/16384.0;
+           ~ ~~~~~~~~~~~^~~~~~~~
+main.c(106): warning: implicit conversion loses floating-point precision: 'double' to 'float' [-Wimplicit-float-conversion]
+        Ay = Accel_Y_RAW/16384.0;
+           ~ ~~~~~~~~~~~^~~~~~~~
+main.c(107): warning: implicit conversion loses floating-point precision: 'double' to 'float' [-Wimplicit-float-conversion]
+        Az = Accel_Z_RAW/16384.0;
+           ~ ~~~~~~~~~~~^~~~~~~~
+main.c(87): warning: no previous prototype for function 'MPU6050_Read_Accel' [-Wmissing-prototypes]
+void MPU6050_Read_Accel (void)
+     ^
+main.c(87): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void MPU6050_Read_Accel (void)
+^
+static 
+main.c(29): warning: no previous extern declaration for non-static variable 'Ax' [-Wmissing-variable-declarations]
+float Ax,Ay,Az,Gx,Gy,Gz;
+      ^
+main.c(29): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+float Ax,Ay,Az,Gx,Gy,Gz;
+^
+main.c(29): warning: no previous extern declaration for non-static variable 'Ay' [-Wmissing-variable-declarations]
+float Ax,Ay,Az,Gx,Gy,Gz;
+         ^
+main.c(29): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+float Ax,Ay,Az,Gx,Gy,Gz;
+^
+main.c(29): warning: no previous extern declaration for non-static variable 'Az' [-Wmissing-variable-declarations]
+float Ax,Ay,Az,Gx,Gy,Gz;
+            ^
+main.c(29): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+float Ax,Ay,Az,Gx,Gy,Gz;
+^
+main.c(29): warning: no previous extern declaration for non-static variable 'Gx' [-Wmissing-variable-declarations]
+float Ax,Ay,Az,Gx,Gy,Gz;
+               ^
+main.c(29): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+float Ax,Ay,Az,Gx,Gy,Gz;
+^
+main.c(29): warning: no previous extern declaration for non-static variable 'Gy' [-Wmissing-variable-declarations]
+float Ax,Ay,Az,Gx,Gy,Gz;
+                  ^
+main.c(29): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+float Ax,Ay,Az,Gx,Gy,Gz;
+^
+main.c(29): warning: no previous extern declaration for non-static variable 'Gz' [-Wmissing-variable-declarations]
+float Ax,Ay,Az,Gx,Gy,Gz;
+                     ^
+main.c(29): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+float Ax,Ay,Az,Gx,Gy,Gz;
+^
+main.c(31): warning: no previous extern declaration for non-static variable 'check' [-Wmissing-variable-declarations]
+uint8_t check;
+        ^
+main.c(31): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint8_t check;
+^
+24 warnings generated.
+compiling main.c...
+linking...
+Program Size: Code=3128 RO-data=468 RW-data=0 ZI-data=1656  
+".\Objects\I2CTx_Rx.axf" - 0 Error(s), 49 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM.CMSIS.5.9.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.6.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F4xx_DFP.2.17.0.pack
+                Keil.STM32F4xx_DFP.2.17.0
+                STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 2.6.3
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_Target_1
+  C:/Users/sudhi/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  C:/Users/sudhi/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.6.0
+
+   * Component: Keil::Device:Startup:2.6.3
+      Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c
+      Include file:  Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
+      Source file:   MDK/Device/Source/ARM/STM32F446xx_OPT.s
+      Source file:   MDK/Device/Source/ARM/STM32F4xx_OTP.s
+      Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f446xx.s
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
