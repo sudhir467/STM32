@@ -1,4 +1,9 @@
-
+/*
+ * This application is to Operate the CAN in loop Back mode using Interrupt
+ *
+ * Author:Sudhir Borra.
+ *
+ */
 #include <string.h>
 #include "stm32f4xx_hal.h"
 #include "main.h"
@@ -53,10 +58,7 @@ int main(void)
 
 
 
-/**
-  * @brief System Clock Configuration
-  * @retval None
-  */
+/*System clock configuration*/
 void SystemClock_Config_HSE(uint8_t clock_freq)
 {
 	RCC_OscInitTypeDef Osc_Init;
@@ -147,7 +149,7 @@ void SystemClock_Config_HSE(uint8_t clock_freq)
 
  }
 
-
+/*CAN Tx configuration*/
 void CAN1_Tx(void)
 {
 
@@ -171,6 +173,7 @@ void CAN1_Tx(void)
 
 }
 
+/*CAN Rx configuration*/
 void CAN1_Rx(void)
 {
 	CAN_RxHeaderTypeDef RxHeader;
@@ -192,7 +195,7 @@ void CAN1_Rx(void)
 
 }
 
-
+/*CAN filter configuration*/
 void CAN_Filter_Config(void)
 {
 	CAN_FilterTypeDef can1_filter_init;
@@ -213,6 +216,8 @@ void CAN_Filter_Config(void)
 	}
 
 }
+
+/*GPIO configuration*/
 void GPIO_Init(void)
 {
     __HAL_RCC_GPIOA_CLK_ENABLE();
@@ -224,7 +229,7 @@ void GPIO_Init(void)
 }
 
 
-
+/*UART configuration*/
 void UART2_Init(void)
 {
 	huart2.Instance = USART2;
@@ -243,7 +248,7 @@ void UART2_Init(void)
 
 }
 
-
+/*CAN Configuration */
 void CAN1_Init(void)
 {
 	hcan1.Instance = CAN1;
@@ -267,6 +272,7 @@ void CAN1_Init(void)
 	}
 
 }
+
 
 void HAL_CAN_TxMailbox0CompleteCallback(CAN_HandleTypeDef *hcan)
 {

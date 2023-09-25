@@ -56,6 +56,7 @@ return 0;
 
 }
 
+/*System Clock configuration*/
 void SystemClock_Config_HSI(uint8_t clock_freq) {
 	RCC_OscInitTypeDef osc_init;
 	RCC_ClkInitTypeDef clk_init;
@@ -146,6 +147,7 @@ void SystemClock_Config_HSI(uint8_t clock_freq) {
 
 }
 
+/*CAN configuration*/
 void CAN1_Init(void)
 {
 
@@ -170,7 +172,7 @@ void CAN1_Init(void)
 	}
 }
 
-
+/*CAN Tx configuration*/
 void CAN1_Tx(void)
 {
 	CAN_TxHeaderTypeDef TxHeader;
@@ -194,6 +196,7 @@ void CAN1_Tx(void)
 
 }
 
+/*CAN Rx configuration*/
 void CAN1_Rx()
 {
 	CAN_RxHeaderTypeDef RxHeader;
@@ -213,7 +216,7 @@ void CAN1_Rx()
 
 }
 
-
+/*CAN filter configuration*/
 void CAN_Filter_Config(void)
 {
 	CAN_FilterTypeDef can1_filter_init;
@@ -234,6 +237,7 @@ void CAN_Filter_Config(void)
 
 }
 
+/*GPIO configuration*/
 void GPIO_Init(void) {
 	__HAL_RCC_GPIOA_CLK_ENABLE();
 	GPIO_InitTypeDef ledgpio;
@@ -245,6 +249,7 @@ void GPIO_Init(void) {
 
 }
 
+/*UART configuration*/
 void UART2_Init(void) {
 	huart2.Instance = USART2;
 	huart2.Init.BaudRate = 115200;
