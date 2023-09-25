@@ -1,1 +1,1 @@
-/*Bare metal I2c Firmware for STM32 interfaced with MPU6050*/
+/*Bare metal I2C Firmware for STM32 interfaced with MPU6050*/
