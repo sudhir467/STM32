@@ -1,0 +1,5 @@
+stm32f4xx_it.c:7:6:SysTick_Handler	1
+stm32f4xx_it.c:13:6:CAN1_TX_IRQHandler	1
+stm32f4xx_it.c:19:6:CAN1_RX0_IRQHandler	1
+stm32f4xx_it.c:25:6:CAN1_RX1_IRQHandler	1
+stm32f4xx_it.c:31:6:CAN1_SCE_IRQHandler	1
