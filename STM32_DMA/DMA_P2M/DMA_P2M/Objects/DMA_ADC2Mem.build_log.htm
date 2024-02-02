@@ -1,0 +1,165 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.38.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: sudhir borra, Borri Spa, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.38.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.19
+Assembler:       Armasm.exe V6.19
+Linker/Locator:  ArmLink.exe V6.19
+Library Manager: ArmAr.exe V6.19
+Hex Converter:   FromElf.exe V6.19
+CPU DLL:         SARMCM3.DLL V5.38.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.1.0.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+C:\Users\sudhi\Documents\STM32_Register\DMA\DMA_P2M\DMA_ADC2Mem.uvprojx
+Project File Date:  02/01/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.19', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+main.c(6): warning: In file included from...
+./RccConfig_F446.h(4): warning: // comments are not allowed in this language [-Wcomment]
+#include "stm32f4xx.h"                  // Device header
+                                        ^
+main.c(23): warning: // comments are not allowed in this language [-Wcomment]
+        RCC->APB2ENR  |= (1<<8); // Enable the ADC1 clock
+                                 ^
+main.c(31): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        ADC1->CR1 &= ~(1<<24); // 12 bit resolution
+                  ~~ ^~~~~~~~
+main.c(36): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        ADC1-> CR2 &= ~(1<<11); // Data Alignement RIGHT
+                   ~~ ^~~~~~~~
+main.c(39): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        ADC1->SMPR2 &= ~(1<<7)|(7<<12); // Sampling time of 3 Cycles for Channel 1 and channel 4
+                    ~~ ~~~~~~~^~~~~~~~
+main.c(10): warning: no previous prototype for function 'ADC_Init' [-Wmissing-prototypes]
+void ADC_Init(void)
+     ^
+main.c(10): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void ADC_Init(void)
+^
+static 
+main.c(74): warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
+        uint32_t delay =10000;
+                 ^
+main.c(67): warning: no previous prototype for function 'ADC_Enable' [-Wmissing-prototypes]
+void ADC_Enable(void)
+     ^
+main.c(67): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void ADC_Enable(void)
+^
+static 
+main.c(78): warning: no previous prototype for function 'ADC_Start' [-Wmissing-prototypes]
+void ADC_Start(void)
+     ^
+main.c(78): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void ADC_Start(void)
+^
+static 
+main.c(102): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        DMA2_Stream0->CR &= ~(3<<6); // Peripheral to Memory
+                         ~~ ^~~~~~~
+main.c(110): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        DMA2_Stream0->CR &= ~ (7<<25); // Channel 0 selected
+                         ~~ ^~~~~~~~~
+main.c(89): warning: no previous prototype for function 'DMA_Init' [-Wmissing-prototypes]
+void DMA_Init(void)
+     ^
+main.c(89): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void DMA_Init(void)
+^
+static 
+main.c(114): warning: no previous prototype for function 'DMA_Config' [-Wmissing-prototypes]
+void DMA_Config(uint32_t srcAdd, uint32_t destAdd, uint16_t size)
+     ^
+main.c(114): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void DMA_Config(uint32_t srcAdd, uint32_t destAdd, uint16_t size)
+^
+static 
+main.c(155): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                ADC1->CR2 &= ~(1<<0); // ADON =0 disable ADC1
+                          ~~ ^~~~~~~
+main.c(165): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        DMA2_Stream0->CR &= ~(1<<0);
+                         ~~ ^~~~~~~
+main.c(147): warning: no previous prototype for function 'DMA_Go' [-Wmissing-prototypes]
+void DMA_Go(uint16_t datasize)
+     ^
+main.c(147): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void DMA_Go(uint16_t datasize)
+^
+static 
+main.c(206): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+                                                                        Avgslope=2.5mv/<B0>C ->0.0025v
+                                                                                       ^
+main.c(209): warning: implicit conversion loses floating-point precision: 'double' to 'float' [-Wimplicit-float-conversion]
+                Temperature = (((float)(3.3*RxData[2]/(float)4095) - 0.76) / 0.0025) + 25;
+                            ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+main.c(209): warning: implicit conversion increases floating-point precision: 'float' to 'double' [-Wdouble-promotion]
+                Temperature = (((float)(3.3*RxData[2]/(float)4095) - 0.76) / 0.0025) + 25;
+                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ~
+main.c(209): warning: implicit conversion increases floating-point precision: 'float' to 'double' [-Wdouble-promotion]
+                Temperature = (((float)(3.3*RxData[2]/(float)4095) - 0.76) / 0.0025) + 25;
+                                                     ~^~~~~~~~~~~
+main.c(182): warning: no previous extern declaration for non-static variable 'RxData' [-Wmissing-variable-declarations]
+uint16_t RxData[3];
+         ^
+main.c(182): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint16_t RxData[3];
+^
+main.c(183): warning: no previous extern declaration for non-static variable 'Temperature' [-Wmissing-variable-declarations]
+float Temperature;
+      ^
+main.c(183): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+float Temperature;
+^
+22 warnings generated.
+compiling main.c...
+linking...
+Program Size: Code=3868 RO-data=468 RW-data=0 ZI-data=1648  
+".\Objects\DMA_ADC2Mem.axf" - 0 Error(s), 22 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM.CMSIS.5.9.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.6.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F4xx_DFP.2.17.0.pack
+                Keil.STM32F4xx_DFP.2.17.0
+                STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 2.6.3
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_Target_1
+  C:/Users/sudhi/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  C:/Users/sudhi/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.6.0
+
+   * Component: Keil::Device:Startup:2.6.3
+      Source file:   MDK/Device/Source/ARM/STM32F4xx_OTP.s
+      Source file:   MDK/Device/Source/ARM/STM32F446xx_OPT.s
+      Include file:  Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
+      Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f446xx.s
+      Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
