@@ -1,1 +1,1 @@
-/*STM32 Baremetal application for Internal temperature sensor using ADC*/
+/*STM32 Baremetal application for MULTI channel ADC*/
